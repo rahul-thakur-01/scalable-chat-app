@@ -1,10 +1,15 @@
-import express from 'express';
 import { createServer } from 'http';
+import dotenv from 'dotenv';
+
 import SocketService from './services/socket';
+import initDatabase from './config/db';
+import app from './app';
+
+dotenv.config();
 
 async function startServer() {
 
-    const app = express();
+    await initDatabase();
     const port = process.env.PORT || 3000;
     const httpServer = createServer(app);
     

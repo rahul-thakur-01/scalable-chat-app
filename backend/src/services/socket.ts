@@ -13,10 +13,7 @@ class SocketService{
         });
     }
 
-    public getIO(){
-        return this._io;
-    }
-
+    public getIO = () => this._io;
 
     public async initListeners(){
         const io = this._io;
